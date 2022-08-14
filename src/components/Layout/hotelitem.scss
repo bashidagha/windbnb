@@ -1,5 +1,9 @@
 .item {
   width: 37rem;
+
+  h3 {
+    margin-top: 1rem;
+  }
 }
 
 .item img {
@@ -42,10 +46,8 @@
   }
 }
 
-
-@media (min-width:700px){
-    .item img {
-        height: 27rem;
-      }
-
+@media (min-width: 700px) {
+  .item img {
+    height: 27rem;
+  }
 }

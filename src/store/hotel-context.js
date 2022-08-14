@@ -2,12 +2,12 @@ import { createContext, useState } from "react";
 
 const hotelContext = createContext({
   guests: 0,
-  city: "Helsinki, Finland",
+  city: null,
   showModal: false,
 });
 
 export function HotelContextProvider(props) {
-  const [cityState, setCityState] = useState("Helsinki, Finland");
+  const [cityState, setCityState] = useState(null);
   const [guestsState, setGuestsState] = useState(0);
   const [showModal, setShowModal] = useState(false);
 

@@ -17,7 +17,7 @@ const Navbar = () => {
       <img src="logo.png" alt="windbnb" className="logo"></img>
 
       <div className="search-nav" onClick={show}>
-        <div className="search-nav-city">{ctx.city}</div>
+        <div className="search-nav-city">{!ctx.city ? "Helsinki, Finland" : ctx.city + ", Finland"}</div>
         <div className="search-nav-guests">{noGuest && "Add guests"}</div>
         <div className="search-nav-icon">
           <Icon name="search" />

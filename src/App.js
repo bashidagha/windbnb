@@ -20,9 +20,13 @@ function App() {
         <h1>Stays in Finland</h1>
 
         <div className="hotels">
-          {hotels.map((hotel) => (
-            <HotelItem hotel={hotel} key={hotel.city} />
-          ))}
+          {!ctx.city
+            ? hotels.map((hotel) => (
+                <HotelItem hotel={hotel} key={hotel.photo} />
+              ))
+            : hotels
+                .filter((hotel) => hotel.city === ctx.city)
+                .map((hotel) => <HotelItem hotel={hotel} key={hotel.photo} />)}
         </div>
 
         <footer>

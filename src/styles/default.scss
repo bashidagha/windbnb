@@ -1,8 +1,8 @@
-:root{
-    ---color-bold: #4f4f4f;
-    ---color-gray: #828282;
-    ---color-placeholder: #BDBDBD;
-    ---color-orange: #EB5757;
+:root {
+  ---color-bold: #4f4f4f;
+  ---color-gray: #828282;
+  ---color-placeholder: #bdbdbd;
+  ---color-orange: #eb5757;
 }
 
 html {
@@ -32,12 +32,21 @@ img {
   max-width: 100%;
 }
 
-h1{
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h1 {
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-h3{
+h3 {
   font-size: 1.4rem;
   font-weight: 600;
 }
