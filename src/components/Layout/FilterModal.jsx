@@ -14,6 +14,14 @@ const FilterModal = () => {
     ctx.changeCityHandler(name);
   };
 
+  const addGuestHandler = () => {
+    ctx.changeGuestsHandler(ctx.guests < 7 ? ctx.guests + 1 : 7);
+  };
+
+  const minusGuestHandler = () => {
+    ctx.changeGuestsHandler(ctx.guests === 0 ? 0 : ctx.guests - 1);
+  };
+
   const noGuest = ctx.guests > 0 ? false : true;
 
   return (
@@ -34,7 +42,9 @@ const FilterModal = () => {
 
           <div>
             <h5>Guests</h5>
-            <p className="disable">{noGuest ? "Add guests" : ctx.guests}</p>
+            <p className="disable">
+              {noGuest ? "Add guests" : ctx.guests + " guests"}
+            </p>
           </div>
         </div>
 
@@ -61,13 +71,19 @@ const FilterModal = () => {
 
             <p className="disable">Ages 13 or above</p>
 
-            <p>{ctx.guests}</p>
+            <div className="btn-number">
+              <Icon name="minus" onClick={minusGuestHandler} />
+              {ctx.guests} <Icon name="plus" onClick={addGuestHandler} />
+            </div>
 
             <h5>Children</h5>
 
             <p className="disable">Ages 2-12</p>
 
-            <p>{ctx.guests}</p>
+            <div className="btn-number">
+              <Icon name="minus" onClick={minusGuestHandler} />
+              {ctx.guests} <Icon name="plus" onClick={addGuestHandler} />
+            </div>
           </div>
         </div>
 
