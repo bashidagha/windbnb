@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/app.scss'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { HotelContextProvider } from "./store/hotel-context";
+import "./styles/app.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <HotelContextProvider>
+      <App />
+    </HotelContextProvider>
   </React.StrictMode>
 );
-

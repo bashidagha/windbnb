@@ -2,17 +2,20 @@ import Card from "./components/UI/Card";
 import HotelItem from "./components/Layout/HotelItem";
 import hotels from "./stays.json";
 import Navbar from "./components/Layout/Navbar";
-import { useState } from "react";
 import "./index.scss";
+import FilterModal from "./components/Layout/FilterModal";
+import { useContext } from "react";
+import hotelContext from "./store/hotel-context";
 
 function App() {
-  const [city, setCity] = useState("Helsinki, Finland");
-  const [guests, setGuests] = useState(0);
+  const ctx = useContext(hotelContext);
 
   return (
     <>
+      <FilterModal />
+
       <Card>
-        <Navbar city={city} guests={guests} />
+        <Navbar />
 
         <h1>Stays in Finland</h1>
 
@@ -23,7 +26,8 @@ function App() {
         </div>
 
         <footer>
-          created by <a href="https://github.com/bashidagha">bashidagha</a> - devChallenges.io
+          created by <a href="https://github.com/bashidagha">bashidagha</a> -
+          devChallenges.io
         </footer>
       </Card>
     </>
