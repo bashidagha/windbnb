@@ -10,6 +10,10 @@ import hotelContext from "./store/hotel-context";
 function App() {
   const ctx = useContext(hotelContext);
 
+  let filteredHotel = !ctx.city
+    ? hotels
+    : hotels.filter((hotel) => hotel.city === ctx.city);
+
   return (
     <>
       {ctx.showModal && <FilterModal />}
@@ -17,16 +21,18 @@ function App() {
       <Card>
         <Navbar />
 
-        <h1>Stays in Finland</h1>
+        <div className="stay-title">
+          <h1>Stays in Finland</h1>
+
+          <div className="disable">
+            {filteredHotel.length + "+ stays"}
+            </div>          
+        </div>
 
         <div className="hotels">
-          {!ctx.city
-            ? hotels.map((hotel) => (
-                <HotelItem hotel={hotel} key={hotel.photo} />
-              ))
-            : hotels
-                .filter((hotel) => hotel.city === ctx.city)
-                .map((hotel) => <HotelItem hotel={hotel} key={hotel.photo} />)}
+          {filteredHotel.map((hotel) => (
+            <HotelItem hotel={hotel} key={hotel.photo} />
+          ))}
         </div>
 
         <footer>

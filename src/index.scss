@@ -16,3 +16,12 @@ footer{
         text-decoration: underline;
     }
 }
+
+.stay-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.disable {
+    color: var(---color-placeholder);
+  }
