@@ -8,11 +8,15 @@ const Navbar = () => {
 
   const noGuest = ctx.guests > 0 ? false : true;
 
+  const show = () =>{
+    ctx.showModalHandler(true)
+  }
+
   return (
     <nav>
       <img src="logo.png" alt="windbnb" className="logo"></img>
 
-      <div className="search-nav">
+      <div className="search-nav" onClick={show}>
         <div className="search-nav-city">{ctx.city}</div>
         <div className="search-nav-guests">{noGuest && "Add guests"}</div>
         <div className="search-nav-icon">

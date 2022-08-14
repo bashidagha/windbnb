@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <FilterModal />
+      {ctx.showModal && <FilterModal />}
 
       <Card>
         <Navbar />
